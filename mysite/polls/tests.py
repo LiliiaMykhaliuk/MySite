@@ -4,6 +4,7 @@ from django.test import TestCase
 from django.utils import timezone
 
 from .models import Question
+from django.views import generic
 
 from django.urls import reverse
 
@@ -106,7 +107,7 @@ class QuestionIndexViewTests(TestCase):
         )
 
 class DetailView(generic.DetailView):
-    ...
+
     def get_queryset(self):
         """
         Excludes any questions that aren't published yet.
@@ -115,6 +116,7 @@ class DetailView(generic.DetailView):
 
 
 class QuestionDetailViewTests(TestCase):
+
     def test_future_question(self):
         """
         The detail view of a question with a pub_date in the future

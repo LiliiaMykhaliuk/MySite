@@ -1,7 +1,7 @@
-li a {
-    color: green;
+li a,h1,li,label {
+    color: rgb(250, 250, 250);
 }
 
 body {
-    background: white url("images/background.gif") no-repeat;
+    background: rgb(0, 0, 0) url("images/background.gif") no-repeat;
 }
